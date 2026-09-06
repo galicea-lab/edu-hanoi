@@ -1,0 +1,106 @@
+.hanoi-game {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls input {
+  width: 60px;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.controls button {
+  font-size: 1rem;
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+.info {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.game-board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end; /* Wyrównuje wieże do dołu */
+  height: 350px; /* Stała wysokość dla planszy */
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.tower {
+  display: flex;
+  flex-direction: column-reverse; /* Kluczowe! Krążki układają się od dołu */
+  align-items: center;
+  width: 30%;
+  min-height: 300px;
+  border-bottom: 8px solid #666; /* Podstawa wieży */
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 5px 5px 0 0;
+}
+
+.tower:hover {
+  background-color: #e9e9e9;
+}
+
+/* Styl dla zaznaczonej wieży */
+.tower.selected {
+  background-color: #d0e7ff;
+}
+
+/* Styl dla zaznaczonego (wierzchniego) krążka - to on faktycznie się przenosi */
+.disk-selected {
+  outline: 3px solid #007bff;
+  outline-offset: 2px;
+  transform: translateY(-4px);
+}
+
+.disk {
+  height: 30px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.win-message {
+  color: green;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
